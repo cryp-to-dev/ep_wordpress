@@ -6,7 +6,7 @@ add_action( 'woocommerce_email_after_order_table', 'custom_woocommerce_shipping_
 
 function custom_woocommerce_shipping_insurance( $order, $sent_to_admin) {
     if (get_post_meta( $order->id, 'seguro_envio', true ) == '1' ):
-       echo 'Por favor revisar el estado de rastreo del pedido, las solicitudes del seguro de envío se atenderán antes de que el paquete llegue al destinatario. En caso de tener un reclamo seguir este enlace <a href="http://eplaza.ec/insurance/complain.php?order=' . $order->id . '">reclamo</a>';
+       echo 'Por favor revisar el estado de rastreo del pedido, las solicitudes del seguro de envío se atenderán antes de que el paquete llegue al destinatario. En caso de tener un reclamo seguir este <a href="http://eplaza.ec/reclamo/?order=' . $order->id . '">enlace</a>';
 
     endif;
 }
